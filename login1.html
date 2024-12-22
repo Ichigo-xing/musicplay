@@ -4,41 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <title>登录</title>
+    <style>
+        div.hidden {display:none;}
+        div.hidden1 {display:none;}
+    </style>
+    <script type="text/javascript" src="../music-player/muisc.js"></script>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="header">
-        <h2>登录</h2>
-        <label for="username"><span>用户名：</span><input type="text" id="use"></label>
+        <div class="header">
+        <h2>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp登录</h2>
+        <label for="username"><span>用户名：</span><input type="text" id="useLog"></label>
         <br>
-        <label for="password"><span>&nbsp密码:</span><input type="password" id="pwd"></label>
+        <label for="password"><span>&nbsp密码:</span><input type="password" id="pwdLog"></label>
         <br>
         <div class="del">
             <button onclick="login()">登录</button>
-            <button><a href="../practice/regist1.html">去注册</a></button>
+            <button onclick="myFunction()">去注册</button>
         </div>
-    </div>
+        </div>
+        <div class="hidden">
+            <h2>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp注册</h2>
+            </span>
+            <label for="username"><span>用户名：</span><input type="text" id="use"></label>
+            <br>
+            <label for="password"><span>密码:</span><input type="password" id="pwd"></label>
+            <br>
+            <label for="password"><span>确认密码 </span><input type="password" id="pwd2"> </label>
+            <br>
+            <div>
+                <button onclick="regist()">注册</button>
+                <button onclick="myFunction2()">去登录</button>
+            </div>
+        </div>
 </body>
-<script>
-function login() {
-    var use = document.getElementById('use');
-    var pwd = document.getElementById('pwd');
-    var cbx = document.getElementById('cbx');
-    let dateUse = localStorage.getItem(use);
-    console.log(dateUse);
-    var dateObj = JSON.parse(dateUse);
-    console.log(dateObj);
-    console.log(use.value);
-    console.log(pwd.value);
-    console.log(dateObj.username);
-    console.log(dateObj.password);
-    console.log(dateUse);
-    if (use.value == dateObj.username && pwd.value == dateObj.password) {
-        alert('登陆成功');
-        location.href = 'https://www.4399.com';
-
-    } else {
-        alert('用户名或者密码错误')
-    }
-}
-
-</script>
